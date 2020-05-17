@@ -1,10 +1,16 @@
 package com.ankitangra.www.recipies.di
 
 import android.app.Application
+import com.ankitangra.www.recipies.BaseActivity
 import dagger.BindsInstance
 import dagger.Component
+import javax.inject.Singleton
 
-@Component
+@Singleton
+@Component (
+    modules = [
+        AppModule::class]
+)
 interface AppComponent {
 
     @Component.Builder
@@ -15,4 +21,7 @@ interface AppComponent {
 
         fun build() : AppComponent
     }
+
+    fun inject (baseActivity: BaseActivity)
+
 }
