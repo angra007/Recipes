@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: "kotlin-kapt"
 
 android {
     compileSdkVersion 29
@@ -32,6 +33,9 @@ dependencies {
     def coordinator_layout_version = "1.1.0"
     implementation "androidx.coordinatorlayout:coordinatorlayout:$coordinator_layout_version"
 
+    def dagger_version = "2.25.4"
+    implementation "com.google.dagger:dagger:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.core:core-ktx:1.2.0'
